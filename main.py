@@ -3,6 +3,7 @@ import jieba
 import jieba.analyse
 import math
 from functools import reduce
+import sys
 
 
 def string(file):
@@ -67,9 +68,9 @@ def similar(all_keys, original_document_dic, original_document_test_dic):
 
 
 try:
-    original_document = input("请输入原文文件：")
-    original_document_test = input("请输入测试文件：")
-    output = input("请输入输出文件：")
+    original_document = sys.argv[1]
+    original_document_test = sys.argv[2]
+    output = sys.argv[3]
     all_key = set()
     str_Original_document = string(original_document)
     str_Original_document_test = string(original_document_test)
